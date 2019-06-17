@@ -1,0 +1,1536 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>123</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>123</h1>
+<p class='attribute'><strong>Start Time:</strong> 2019-06-17 14:49:50</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:10.447529</p>
+<p class='attribute'><strong>Status:</strong> Pass 5 Failure 2 Error 20</p>
+
+<p class='description'>456</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='errorClass'>
+    <td>get_event_list_test.GetEventListTest:  获得发布会列表 </td>
+    <td>8</td>
+    <td>0</td>
+    <td>0</td>
+    <td>8</td>
+    <td><a href="javascript:showClassDetail('c1',8)">Detail</a></td>
+</tr>
+
+<tr id='ft1.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_get_event_list_eid_error: eid=901 查询结果为空</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
+        error</a>
+
+    <div id='div_ft1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.1: Traceback (most recent call last):
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\util\connection.py", line 80, in create_connection
+    raise err
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\util\connection.py", line 70, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\connectionpool.py", line 603, in urlopen
+    chunked=chunked)
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\connectionpool.py", line 355, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\Users\JHMK-ZSS\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1229, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\JHMK-ZSS\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1275, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\JHMK-ZSS\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1224, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\JHMK-ZSS\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1016, in _send_output
+    self.send(msg)
+  File "C:\Users\JHMK-ZSS\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 956, in send
+    self.connect()
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\connection.py", line 183, in connect
+    conn = self._new_conn()
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\connection.py", line 169, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPConnection object at 0x000002222BA20940&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\connectionpool.py", line 641, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\util\retry.py", line 399, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/get_event_list/?eid=901 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000002222BA20940&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\interface\get_event_list_test.py", line 21, in test_get_event_list_eid_error
+    r = requests.get(self.base_url, params={'eid':901})
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\requests\api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\requests\sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\requests\adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/get_event_list/?eid=901 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000002222BA20940&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.2' class='none'>
+    <td class='errorCase'><div class='testcase'>test_get_event_list_eid_error: eid=901 查询结果为空</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.2')" >
+        error</a>
+
+    <div id='div_ft1.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.2: Traceback (most recent call last):
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\interface\get_event_list_test.py", line 17, in tearDown
+    print(self.result)
+AttributeError: 'GetEventListTest' object has no attribute 'result'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.3' class='none'>
+    <td class='errorCase'><div class='testcase'>test_get_event_list_eid_success: 根据 eid 查询结果成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.3')" >
+        error</a>
+
+    <div id='div_ft1.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.3: Traceback (most recent call last):
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\util\connection.py", line 80, in create_connection
+    raise err
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\util\connection.py", line 70, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\connectionpool.py", line 603, in urlopen
+    chunked=chunked)
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\connectionpool.py", line 355, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\Users\JHMK-ZSS\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1229, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\JHMK-ZSS\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1275, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\JHMK-ZSS\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1224, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\JHMK-ZSS\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1016, in _send_output
+    self.send(msg)
+  File "C:\Users\JHMK-ZSS\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 956, in send
+    self.connect()
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\connection.py", line 183, in connect
+    conn = self._new_conn()
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\connection.py", line 169, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPConnection object at 0x000002222BA78978&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\connectionpool.py", line 641, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\util\retry.py", line 399, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/get_event_list/?eid=1 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000002222BA78978&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\interface\get_event_list_test.py", line 28, in test_get_event_list_eid_success
+    r = requests.get(self.base_url, params={'eid':1})
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\requests\api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\requests\sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\requests\adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/get_event_list/?eid=1 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000002222BA78978&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.4' class='none'>
+    <td class='errorCase'><div class='testcase'>test_get_event_list_eid_success: 根据 eid 查询结果成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.4')" >
+        error</a>
+
+    <div id='div_ft1.4' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.4: Traceback (most recent call last):
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\interface\get_event_list_test.py", line 17, in tearDown
+    print(self.result)
+AttributeError: 'GetEventListTest' object has no attribute 'result'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.5' class='none'>
+    <td class='errorCase'><div class='testcase'>test_get_event_list_nam_result_null: 关键字‘abc’查询</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.5')" >
+        error</a>
+
+    <div id='div_ft1.5' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.5').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.5: Traceback (most recent call last):
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\util\connection.py", line 80, in create_connection
+    raise err
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\util\connection.py", line 70, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\connectionpool.py", line 603, in urlopen
+    chunked=chunked)
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\connectionpool.py", line 355, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\Users\JHMK-ZSS\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1229, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\JHMK-ZSS\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1275, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\JHMK-ZSS\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1224, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\JHMK-ZSS\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1016, in _send_output
+    self.send(msg)
+  File "C:\Users\JHMK-ZSS\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 956, in send
+    self.connect()
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\connection.py", line 183, in connect
+    conn = self._new_conn()
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\connection.py", line 169, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPConnection object at 0x000002222BAD2080&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\connectionpool.py", line 641, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\util\retry.py", line 399, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/get_event_list/?name=abc (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000002222BAD2080&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\interface\get_event_list_test.py", line 37, in test_get_event_list_nam_result_null
+    r = requests.get(self.base_url, params={'name':'abc'})
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\requests\api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\requests\sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\requests\adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/get_event_list/?name=abc (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000002222BAD2080&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.6' class='none'>
+    <td class='errorCase'><div class='testcase'>test_get_event_list_nam_result_null: 关键字‘abc’查询</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.6')" >
+        error</a>
+
+    <div id='div_ft1.6' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.6').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.6: Traceback (most recent call last):
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\interface\get_event_list_test.py", line 17, in tearDown
+    print(self.result)
+AttributeError: 'GetEventListTest' object has no attribute 'result'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.7' class='none'>
+    <td class='errorCase'><div class='testcase'>test_get_event_list_name_find: 关键字‘发布会’模糊查询</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.7')" >
+        error</a>
+
+    <div id='div_ft1.7' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.7').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.7: Traceback (most recent call last):
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\util\connection.py", line 80, in create_connection
+    raise err
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\util\connection.py", line 70, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\connectionpool.py", line 603, in urlopen
+    chunked=chunked)
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\connectionpool.py", line 355, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\Users\JHMK-ZSS\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1229, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\JHMK-ZSS\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1275, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\JHMK-ZSS\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1224, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\JHMK-ZSS\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1016, in _send_output
+    self.send(msg)
+  File "C:\Users\JHMK-ZSS\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 956, in send
+    self.connect()
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\connection.py", line 183, in connect
+    conn = self._new_conn()
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\connection.py", line 169, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPConnection object at 0x000002222BAD2668&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\connectionpool.py", line 641, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\util\retry.py", line 399, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/get_event_list/?name=xiao (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000002222BAD2668&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\interface\get_event_list_test.py", line 44, in test_get_event_list_name_find
+    r = requests.get(self.base_url, params={'name':'xiao'})
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\requests\api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\requests\sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\requests\adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/get_event_list/?name=xiao (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000002222BAD2668&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.8' class='none'>
+    <td class='errorCase'><div class='testcase'>test_get_event_list_name_find: 关键字‘发布会’模糊查询</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.8')" >
+        error</a>
+
+    <div id='div_ft1.8' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.8').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.8: Traceback (most recent call last):
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\interface\get_event_list_test.py", line 17, in tearDown
+    print(self.result)
+AttributeError: 'GetEventListTest' object has no attribute 'result'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>get_guest_list_test.GetGuestListTest:  获得嘉宾列表 </td>
+    <td>10</td>
+    <td>0</td>
+    <td>0</td>
+    <td>10</td>
+    <td><a href="javascript:showClassDetail('c2',10)">Detail</a></td>
+</tr>
+
+<tr id='ft2.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_get_event_list_eid_error: 根据 eid 查询结果为空</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.1')" >
+        error</a>
+
+    <div id='div_ft2.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.1: Traceback (most recent call last):
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\util\connection.py", line 80, in create_connection
+    raise err
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\util\connection.py", line 70, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\connectionpool.py", line 603, in urlopen
+    chunked=chunked)
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\connectionpool.py", line 355, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\Users\JHMK-ZSS\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1229, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\JHMK-ZSS\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1275, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\JHMK-ZSS\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1224, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\JHMK-ZSS\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1016, in _send_output
+    self.send(msg)
+  File "C:\Users\JHMK-ZSS\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 956, in send
+    self.connect()
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\connection.py", line 183, in connect
+    conn = self._new_conn()
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\connection.py", line 169, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPConnection object at 0x000002222BA786D8&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\connectionpool.py", line 641, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\util\retry.py", line 399, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/get_guest_list/?eid=901 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000002222BA786D8&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\interface\get_guest_list_test.py", line 27, in test_get_event_list_eid_error
+    r = requests.get(self.base_url, params={'eid':901})
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\requests\api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\requests\sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\requests\adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/get_guest_list/?eid=901 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000002222BA786D8&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft2.2' class='none'>
+    <td class='errorCase'><div class='testcase'>test_get_event_list_eid_error: 根据 eid 查询结果为空</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.2')" >
+        error</a>
+
+    <div id='div_ft2.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.2: Traceback (most recent call last):
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\interface\get_guest_list_test.py", line 16, in tearDown
+    print(self.result)
+AttributeError: 'GetGuestListTest' object has no attribute 'result'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft2.3' class='none'>
+    <td class='errorCase'><div class='testcase'>test_get_event_list_eid_phone_null: 根据 eid 和phone 查询结果为空</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.3')" >
+        error</a>
+
+    <div id='div_ft2.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.3: Traceback (most recent call last):
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\util\connection.py", line 80, in create_connection
+    raise err
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\util\connection.py", line 70, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\connectionpool.py", line 603, in urlopen
+    chunked=chunked)
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\connectionpool.py", line 355, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\Users\JHMK-ZSS\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1229, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\JHMK-ZSS\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1275, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\JHMK-ZSS\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1224, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\JHMK-ZSS\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1016, in _send_output
+    self.send(msg)
+  File "C:\Users\JHMK-ZSS\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 956, in send
+    self.connect()
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\connection.py", line 183, in connect
+    conn = self._new_conn()
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\connection.py", line 169, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPConnection object at 0x000002222BA127F0&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\connectionpool.py", line 641, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\util\retry.py", line 399, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/get_guest_list/?eid=901&amp;phone=10000000000 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000002222BA127F0&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\interface\get_guest_list_test.py", line 43, in test_get_event_list_eid_phone_null
+    r = requests.get(self.base_url, params={'eid':901,'phone':'10000000000'})
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\requests\api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\requests\sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\requests\adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/get_guest_list/?eid=901&amp;phone=10000000000 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000002222BA127F0&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft2.4' class='none'>
+    <td class='errorCase'><div class='testcase'>test_get_event_list_eid_phone_null: 根据 eid 和phone 查询结果为空</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.4')" >
+        error</a>
+
+    <div id='div_ft2.4' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.4: Traceback (most recent call last):
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\interface\get_guest_list_test.py", line 16, in tearDown
+    print(self.result)
+AttributeError: 'GetGuestListTest' object has no attribute 'result'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft2.5' class='none'>
+    <td class='errorCase'><div class='testcase'>test_get_event_list_eid_phone_success: 根据 eid 和phone 查询结果成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.5')" >
+        error</a>
+
+    <div id='div_ft2.5' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.5').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.5: Traceback (most recent call last):
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\util\connection.py", line 80, in create_connection
+    raise err
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\util\connection.py", line 70, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\connectionpool.py", line 603, in urlopen
+    chunked=chunked)
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\connectionpool.py", line 355, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\Users\JHMK-ZSS\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1229, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\JHMK-ZSS\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1275, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\JHMK-ZSS\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1224, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\JHMK-ZSS\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1016, in _send_output
+    self.send(msg)
+  File "C:\Users\JHMK-ZSS\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 956, in send
+    self.connect()
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\connection.py", line 183, in connect
+    conn = self._new_conn()
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\connection.py", line 169, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPConnection object at 0x000002222BAD2588&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\connectionpool.py", line 641, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\util\retry.py", line 399, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/get_guest_list/?eid=1&amp;phone=15945393949 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000002222BAD2588&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\interface\get_guest_list_test.py", line 50, in test_get_event_list_eid_phone_success
+    r = requests.get(self.base_url, params={'eid':1,'phone':'15945393949'})
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\requests\api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\requests\sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\requests\adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/get_guest_list/?eid=1&amp;phone=15945393949 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000002222BAD2588&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft2.6' class='none'>
+    <td class='errorCase'><div class='testcase'>test_get_event_list_eid_phone_success: 根据 eid 和phone 查询结果成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.6')" >
+        error</a>
+
+    <div id='div_ft2.6' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.6').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.6: Traceback (most recent call last):
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\interface\get_guest_list_test.py", line 16, in tearDown
+    print(self.result)
+AttributeError: 'GetGuestListTest' object has no attribute 'result'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft2.7' class='none'>
+    <td class='errorCase'><div class='testcase'>test_get_event_list_eid_success: 根据 eid 查询结果成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.7')" >
+        error</a>
+
+    <div id='div_ft2.7' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.7').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.7: Traceback (most recent call last):
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\util\connection.py", line 80, in create_connection
+    raise err
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\util\connection.py", line 70, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\connectionpool.py", line 603, in urlopen
+    chunked=chunked)
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\connectionpool.py", line 355, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\Users\JHMK-ZSS\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1229, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\JHMK-ZSS\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1275, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\JHMK-ZSS\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1224, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\JHMK-ZSS\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1016, in _send_output
+    self.send(msg)
+  File "C:\Users\JHMK-ZSS\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 956, in send
+    self.connect()
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\connection.py", line 183, in connect
+    conn = self._new_conn()
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\connection.py", line 169, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPConnection object at 0x000002222BAD2E80&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\connectionpool.py", line 641, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\util\retry.py", line 399, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/get_guest_list/?eid=1 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000002222BAD2E80&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\interface\get_guest_list_test.py", line 34, in test_get_event_list_eid_success
+    r = requests.get(self.base_url, params={'eid':1})
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\requests\api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\requests\sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\requests\adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/get_guest_list/?eid=1 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000002222BAD2E80&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft2.8' class='none'>
+    <td class='errorCase'><div class='testcase'>test_get_event_list_eid_success: 根据 eid 查询结果成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.8')" >
+        error</a>
+
+    <div id='div_ft2.8' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.8').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.8: Traceback (most recent call last):
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\interface\get_guest_list_test.py", line 16, in tearDown
+    print(self.result)
+AttributeError: 'GetGuestListTest' object has no attribute 'result'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft2.9' class='none'>
+    <td class='errorCase'><div class='testcase'>test_get_guest_list_eid_null: eid 参数为空</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.9')" >
+        error</a>
+
+    <div id='div_ft2.9' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.9').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.9: Traceback (most recent call last):
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\util\connection.py", line 80, in create_connection
+    raise err
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\util\connection.py", line 70, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\connectionpool.py", line 603, in urlopen
+    chunked=chunked)
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\connectionpool.py", line 355, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\Users\JHMK-ZSS\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1229, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\JHMK-ZSS\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1275, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\JHMK-ZSS\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1224, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\JHMK-ZSS\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1016, in _send_output
+    self.send(msg)
+  File "C:\Users\JHMK-ZSS\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 956, in send
+    self.connect()
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\connection.py", line 183, in connect
+    conn = self._new_conn()
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\connection.py", line 169, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPConnection object at 0x000002222BAE35C0&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\connectionpool.py", line 641, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\urllib3\util\retry.py", line 399, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/get_guest_list/?eid= (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000002222BAE35C0&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\interface\get_guest_list_test.py", line 20, in test_get_guest_list_eid_null
+    r = requests.get(self.base_url, params={'eid':''})
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\requests\api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\requests\sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\requests\adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/get_guest_list/?eid= (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000002222BAE35C0&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft2.10' class='none'>
+    <td class='errorCase'><div class='testcase'>test_get_guest_list_eid_null: eid 参数为空</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.10')" >
+        error</a>
+
+    <div id='div_ft2.10' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.10').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.10: Traceback (most recent call last):
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\interface\get_guest_list_test.py", line 16, in tearDown
+    print(self.result)
+AttributeError: 'GetGuestListTest' object has no attribute 'result'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>get_hot_list_test.GetHotList</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c3',1)">Detail</a></td>
+</tr>
+
+<tr id='pt3.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_get_hot_list_success</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.1')" >
+        pass</a>
+
+    <div id='div_pt3.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.1: {'code': 200, 'msg': '成功!', 'data': [{'type': 'image', 'text': '什么叫假交情，什么叫真朋友，句句见血', 'username': '大浣熊 [苍井玛利亚]', 'uid': '8841843', 'header': 'http://wimg.spriteapp.cn/profile/large/2018/10/06/5bb8913bc7f86_mini.jpg', 'comment': 44, 'top_commentsVoiceuri': None, 'top_commentsContent': None, 'top_commentsHeader': None, 'top_commentsName': None, 'passtime': '2018-09-17\xa013:48:01', 'soureid': 28611924, 'up': 335, 'down': 40, 'forward': 41, 'image': 'http://wimg.spriteapp.cn/ugc/2018/09/16/5b9dc7c4aa78d_1.jpg', 'gif': None, 'thumbnail': 'http://wimg.spriteapp.cn/ugc/2018/09/16/5b9dc7c4aa78d_1.jpg', 'video': None}, {'type': 'gif', 'text': '被父母追着上学的宝宝', 'username': '大浣熊 [苍井玛利亚]', 'uid': '8841843', 'header': 'http://wimg.spriteapp.cn/profile/large/2018/10/06/5bb8913bc7f86_mini.jpg', 'comment': 88, 'top_commentsVoiceuri': None, 'top_commentsContent': '上体校吧，应该有发展', 'top_commentsHeader': 'http://wimg.spriteapp.cn/profile/large/2016/01/16/5699c9d994dbf_mini.jpg', 'top_commentsName': '日蚀88', 'passtime': '2018-09-13\xa023:12:02', 'soureid': 28597078, 'up': 617, 'down': 27, 'forward': 18, 'image': None, 'gif': 'http://wimg.spriteapp.cn/ugc/2018/09/12/5b9913d87f0af.gif', 'thumbnail': 'http://wimg.spriteapp.cn/ugc/2018/09/12/5b9913d87f0af_a_1.jpg', 'video': None}, {'type': 'gif', 'text': '一对在狗市中等人购买挑选的哈士奇，面对陌生的环境，哥哥死死的抱住瑟瑟发抖的弟弟，并且一脸杀气的怒视着周围的一切，尽管自己很害怕，但是为了兄弟，狗子的眼神中充满着警惕，企图吓退别人。', 'username': '大浣熊 [苍井玛利亚]', 'uid': '8841843', 'header': 'http://wimg.spriteapp.cn/profile/large/2018/10/06/5bb8913bc7f86_mini.jpg', 'comment': 60, 'top_commentsVoiceuri': None, 'top_commentsContent': '两只买回来，只需要一个月，你就会去查询狗肉火锅怎么做', 'top_commentsHeader': 'http://wimg.spriteapp.cn/profile', 'top_commentsName': '毛三百', 'passtime': '2018-09-17\xa021:08:01', 'soureid': 28611833, 'up': 815, 'down': 39, 'forward': 19, 'image': None, 'gif': 'http://wimg.spriteapp.cn/ugc/2018/09/16/5b9dc0b4ef706.gif', 'thumbnail': 'http://wimg.spriteapp.cn/ugc/2018/09/16/5b9dc0b4ef706_a_1.jpg', 'video': None}, {'type': 'gif', 'text': '车主可能比较优秀吧， 怕别人偷车于是这样做。', 'username': '王钢蛋', 'uid': '20076325', 'header': 'http://wimg.spriteapp.cn/profile/large/2018/10/06/5bb87a80c6592_mini.jpg', 'comment': 63, 'top_commentsVoiceuri': None, 'top_commentsContent': '应该是在用面包车祭天，通过召唤术召唤宝马', 'top_commentsHeader': 'http://qzapp.qlogo.cn/qzapp/100336987/381A53B354F7AB9BB137541CB4FDD972/100', 'top_commentsName': '一步一步浇油走', 'passtime': '2018-09-24\xa022:38:02', 'soureid': 28639101, 'up': 317, 'down': 23, 'forward': 2, 'image': None, 'gif': 'http://wimg.spriteapp.cn/ugc/2018/09/23/5ba6eaa95c80f.gif', 'thumbnail': 'http://wimg.spriteapp.cn/ugc/2018/09/23/5ba6eaa95c80f_a_1.jpg', 'video': None}, {'type': 'video', 'text': '本山大叔还是那么逗😄', 'username': '路遥大人521', 'uid': '21957712', 'header': 'http://wimg.spriteapp.cn/profile/large/2018/05/01/5ae84c90a8857_mini.jpg', 'comment': 93, 'top_commentsVoiceuri': None, 'top_commentsContent': '一看本山老师心情就大好', 'top_commentsHeader': 'http://wimg.spriteapp.cn/profile/large/2018/04/25/5adf6464a9aa5_mini.jpg', 'top_commentsName': '坑亲王', 'passtime': '2018-05-06\xa016:19:01', 'soureid': 27841144, 'up': 454, 'down': 56, 'forward': 10, 'image': None, 'gif': None, 'thumbnail': 'http://wimg.spriteapp.cn/picture/2018/0505/5aedb0fd9f0a5_wpd.jpg', 'video': 'http://wvideo.spriteapp.cn/video/2018/0505/5aedb0fd9f0a5_wpd.mp4'}, {'type': 'video', 'text': '小哥哥，你这样尬聊合适么😃😃', 'username': '逗比搞笑营', 'uid': '22930366', 'header': 'http://wimg.spriteapp.cn/profile/20180907125627531199.jpg', 'comment': 18, 'top_commentsVoiceuri': None, 'top_commentsContent': '说舌头有点长 主持人笑了', 'top_commentsHeader': 'http://wimg.spriteapp.cn/profile', 'top_commentsName': '老政', 'passtime': '2018-09-19\xa022:15:02', 'soureid': 28622622, 'up': 553, 'down': 20, 'forward': 71, 'image': None, 'gif': None, 'thumbnail': 'http://wimg.spriteapp.cn/picture/2018/0918/2be827c8bb4711e885b7842b2b4c75ab_wpd.jpg', 'video': 'http://wvideo.spriteapp.cn/video/2018/0918/2be827c8bb4711e885b7842b2b4c75ab_wpd.mp4'}, {'type': 'gif', 'text': '一张强大的进化史图片，一张图让你明白人类是怎么来的～', 'username': '摸咪校尉 [百思正能量]', 'uid': '20385456', 'header': 'http://wimg.spriteapp.cn/profile/large/2017/11/28/5a1cd9941d213_mini.jpg', 'comment': 29, 'top_commentsVoiceuri': None, 'top_commentsContent': '你是咋来的很重要吗你的工资不还是那么点吗', 'top_commentsHeader': 'http://qzapp.qlogo.cn/qzapp/100336987/BC1C519018BA592B6E1260D4BD71C693/100', 'top_commentsName': '莱昂纳多WBK', 'passtime': '2018-05-12\xa007:24:01', 'soureid': 27883684, 'up': 85, 'down': 4, 'forward': 2, 'image': None, 'gif': 'http://wimg.spriteapp.cn/ugc/2018/05/10/5af4072fdb978.gif', 'thumbnail': 'http://wimg.spriteapp.cn/ugc/2018/05/10/5af4072fdb978_a_1.jpg', 'video': None}, {'type': 'video', 'text': '非常浪漫的一个举动，快拿你女朋友试试~', 'username': '法克1947', 'uid': '20746582', 'header': 'http://wimg.spriteapp.cn/profile/20170512102229.jpg', 'comment': 247, 'top_commentsVoiceuri': None, 'top_commentsContent': '都散了吧，凉了！', 'top_commentsHeader': 'http://wimg.spriteapp.cn/profile/large/2017/04/15/58f20ec56d70f_mini.jpg', 'top_commentsName': '草上飞就是在下', 'passtime': '2017-11-30\xa019:14:01', 'soureid': 26921133, 'up': 3709, 'down': 115, 'forward': 1029, 'image': None, 'gif': None, 'thumbnail': 'http://wimg.spriteapp.cn/picture/2017/1130/3d2860b4d57611e7bd9f842b2b4c75ab_wpd_46.jpg', 'video': 'http://wvideo.spriteapp.cn/video/2017/1130/3d2860b4d57611e7bd9f842b2b4c75ab_wpd.mp4'}, {'type': 'gif', 'text': '姐夫们，这是什么脸型？', 'username': '幽默搞笑GIF图 [锤子家族]', 'uid': '15797873', 'header': 'http://wimg.spriteapp.cn/profile/large/2017/03/28/58d9cf7ba2de4_mini.jpg', 'comment': 431, 'top_commentsVoiceuri': None, 'top_commentsContent': '姑娘，家里正好要犁地，借你下巴一用。', 'top_commentsHeader': 'http://thirdwx.qlogo.cn/mmopen/vi_32/B1O9YjnVpZSBJfdIyXRrFce3tu7Tj1nPCkbZS1xqmx3TKIxeS2H8B2uERbcAqSfZ9kHozpvZ0skm6EfLCITslw/132', 'top_commentsName': '一位不愿透漏姓名的赵先生', 'passtime': '2018-06-06\xa021:00:01', 'soureid': 28078338, 'up': 499, 'down': 203, 'forward': 3, 'image': None, 'gif': 'http://wimg.spriteapp.cn/ugc/2018/06/06/5b17623e2f86c.gif', 'thumbnail': 'http://wimg.spriteapp.cn/ugc/2018/06/06/5b17623e2f86c_a_1.jpg', 'video': None}, {'type': 'text', 'text': '女方：有没有车啊？\n我：以后会买的。\n女方：有没有房啊？\n我：以后会买的。\n女方：有多少存款啊？\n我：没有存款，就有点小股票。\n女方：有多少手啊？\n我：总共1000来手吧。\n女方：MDGB，1000来手你还想买房，买车？\n我静静看了下手机上的1000多手茅台......', 'username': 'Aoms_徐', 'uid': '21297327', 'header': 'http://wimg.spriteapp.cn/profile/large/2017/09/05/59ae5babd89d9_mini.jpg', 'comment': 255, 'top_commentsVoiceuri': None, 'top_commentsContent': '来人，给他两斤逗号，记我胖虎帐上', 'top_commentsHeader': 'http://wimg.spriteapp.cn/profile/large/2017/09/05/59ae5ba95758c_mini.jpg', 'top_commentsName': '守护---', 'passtime': '2017-11-03\xa022:56:02', 'soureid': 26709860, 'up': 8366, 'down': 304, 'forward': 21, 'image': None, 'gif': None, 'thumbnail': None, 'video': None}, {'type': 'image', 'text': '标题留给你们', 'username': '椰果奶茶', 'uid': '18677415', 'header': 'http://wimg.spriteapp.cn/profile/large/2017/12/01/5a20cbf62db08_mini.jpg', 'comment': 121, 'top_commentsVoiceuri': None, 'top_commentsContent': 'mdzz被迫害妄想症。', 'top_commentsHeader': 'http://thirdwx.qlogo.cn/mmopen/vi_32/zbCqVG6bFic5uI9zKNoSI7VolnPibD5tJ1fmBz1WsduJ2WjeL3OgFkmUg7PaMibtvZhm95cdVC665Zwmxusn6lOsg/132', 'top_commentsName': '用户5SD3NH', 'passtime': '2018-10-06\xa019:00:02', 'soureid': 28680477, 'up': 522, 'down': 101, 'forward': 33, 'image': 'http://wimg.spriteapp.cn/ugc/2018/10/05/5bb748e66c2bd_1.jpg', 'gif': None, 'thumbnail': 'http://wimg.spriteapp.cn/ugc/2018/10/05/5bb748e66c2bd_1.jpg', 'video': None}, {'type': 'video', 'text': '腿到用时方恨短，可怜的小短腿儿', 'username': '敏智的选择 [年少轻狂]', 'uid': '18380255', 'header': 'http://wimg.spriteapp.cn/profile/large/2017/07/11/59645b78871e2_mini.jpg', 'comment': 63, 'top_commentsVoiceuri': None, 'top_commentsContent': '看看有多少是短小精悍的？', 'top_commentsHeader': 'http://wimg.spriteapp.cn/profile', 'top_commentsName': '大飞2015', 'passtime': '2018-05-04\xa007:43:02', 'soureid': 27818860, 'up': 463, 'down': 18, 'forward': 56, 'image': None, 'gif': None, 'thumbnail': 'http://wimg.spriteapp.cn/picture/2018/0503/5aea92cd87392__b.jpg', 'video': 'http://wvideo.spriteapp.cn/video/2018/0503/5aea92cdd316d_wpd.mp4'}, {'type': 'video', 'text': '刘国梁回归，主持中国乒协的工作。回到球馆，刘国梁表示：感觉依然是那么亲切，就像回家一样', 'username': '新闻事件', 'uid': '22904499', 'header': 'http://wimg.spriteapp.cn/profile/20180809222928273690.jpg', 'comment': 73, 'top_commentsVoiceuri': None, 'top_commentsContent': '这胖子一看就不懂乒乓球。', 'top_commentsHeader': 'http://wimg.spriteapp.cn/profile/large/2018/02/20/5a8bfe900aa1c_mini.jpg', 'top_commentsName': '不愿透露姓名的金城武先生', 'passtime': '2018-09-28\xa010:25:01', 'soureid': 28656305, 'up': 507, 'down': 23, 'forward': 8, 'image': None, 'gif': None, 'thumbnail': 'http://wimg.spriteapp.cn/picture/2018/0928/43778788c2bf11e89fe7842b2b4c75ab_wpd.jpg', 'video': 'http://wvideo.spriteapp.cn/video/2018/0928/43778788c2bf11e89fe7842b2b4c75ab_wpd.mp4'}, {'type': 'video', 'text': '中国成语大会猜词搞笑合集（晚上去你家=轻车熟路）', 'username': '敏智的选择 [年少轻狂]', 'uid': '18380255', 'header': 'http://wimg.spriteapp.cn/profile/large/2017/07/11/59645b78871e2_mini.jpg', 'comment': 53, 'top_commentsVoiceuri': None, 'top_commentsContent': None, 'top_commentsHeader': None, 'top_commentsName': None, 'passtime': '2018-04-09\xa017:44:01', 'soureid': 27406767, 'up': 1076, 'down': 53, 'forward': 189, 'image': None, 'gif': None, 'thumbnail': 'http://wimg.spriteapp.cn/picture/2018/0409/27406767_596.jpg', 'video': 'http://wvideo.spriteapp.cn/video/2018/0409/85a7de023bcc11e8afd7842b2b4c75ab_wpd.mp4'}, {'type': 'image', 'text': '胡建的早餐铺。。。', 'username': '大行小言', 'uid': '13297575', 'header': 'http://wimg.spriteapp.cn/profile/large/2017/10/27/59f3571e12c4d_mini.jpg', 'comment': 56, 'top_commentsVoiceuri': None, 'top_commentsContent': '我知道，我胡建人的', 'top_commentsHeader': 'http://wimg.spriteapp.cn/profile/large/2017/08/14/599146ecd6885_mini.jpg', 'top_commentsName': '二货阿达西阿啊阿啊', 'passtime': '2018-05-12\xa007:48:01', 'soureid': 27882546, 'up': 212, 'down': 16, 'forward': 7, 'image': 'http://wimg.spriteapp.cn/ugc/2018/05/10/5af3e5cb8884d_1.jpg', 'gif': None, 'thumbnail': 'http://wimg.spriteapp.cn/ugc/2018/05/10/5af3e5cb8884d_1.jpg', 'video': None}, {'type': 'gif', 'text': '有一个强势的老婆是什么体验', 'username': '搞笑内涵侠 [快乐驿站]', 'uid': '19064947', 'header': 'http://wimg.spriteapp.cn/profile/large/2017/03/01/58b6ed2126d85_mini.jpg', 'comment': 196, 'top_commentsVoiceuri': None, 'top_commentsContent': '这就是当初瓶盖都拧不开的她???', 'top_commentsHeader': 'http://wimg.spriteapp.cn/profile/large/2018/04/14/5ad188daeac8d_mini.jpg', 'top_commentsName': '內涵段子馒头军团', 'passtime': '2018-04-16\xa006:44:02', 'soureid': 27573767, 'up': 1741, 'down': 44, 'forward': 228, 'image': None, 'gif': 'http://wimg.spriteapp.cn/ugc/2018/04/15/5ad34f1832141.gif', 'thumbnail': 'http://wimg.spriteapp.cn/ugc/2018/04/15/5ad34f1832141_a_1.jpg', 'video': None}, {'type': 'image', 'text': '"鬼压床"到底是什么鬼？现在终于有科学的答案了', 'username': '喒你家玻璃 [砸你家玻璃]', 'uid': '18809558', 'header': 'http://wimg.spriteapp.cn/profile/large/2016/09/29/57ec70bf1adcb_mini.jpg', 'comment': 369, 'top_commentsVoiceuri': None, 'top_commentsContent': '动不了，但是感觉旁边有人', 'top_commentsHeader': 'http://wimg.spriteapp.cn/profile/large/2018/04/25/5adffb0b76206_mini.jpg', 'top_commentsName': '犀牛皇', 'passtime': '2018-05-03\xa006:36:02', 'soureid': 27802935, 'up': 752, 'down': 76, 'forward': 118, 'image': 'http://wimg.spriteapp.cn/ugc/2018/05/01/5ae84ae1934fe_1.jpg', 'gif': None, 'thumbnail': 'http://wimg.spriteapp.cn/ugc/2018/05/01/5ae84ae1934fe_1.jpg', 'video': None}, {'type': 'image', 'text': '别再给宝宝起名为“紫涵梓轩”了，以下名字新颖内涵，不重名', 'username': '情感图库', 'uid': '22880043', 'header': 'http://wimg.spriteapp.cn/profile/20180905173317620078.jpg', 'comment': 417, 'top_commentsVoiceuri': None, 'top_commentsContent': '男楚辞 女诗经', 'top_commentsHeader': 'http://qzapp.qlogo.cn/qzapp/100336987/CE3B214F6AB882E0FA68A004CD8863BE/100', 'top_commentsName': 'L33', 'passtime': '2018-08-24\xa021:28:02', 'soureid': 28520882, 'up': 670, 'down': 101, 'forward': 165, 'image': 'http://wimg.spriteapp.cn/ugc/2018/08/24/01dc8a02a76d11e894f4842b2b4c75ab_1.jpg', 'gif': None, 'thumbnail': 'http://wimg.spriteapp.cn/ugc/2018/08/24/01dc8a02a76d11e894f4842b2b4c75ab_1.jpg', 'video': None}, {'type': 'video', 'text': '某站真的各个都是人才', 'username': '在下段誉', 'uid': '21834085', 'header': 'http://wimg.spriteapp.cn/profile/large/2018/04/21/5adad0e5b8aba_mini.jpg', 'comment': 12, 'top_commentsVoiceuri': None, 'top_commentsContent': None, 'top_commentsHeader': None, 'top_commentsName': None, 'passtime': '2018-05-12\xa023:28:01', 'soureid': 27896451, 'up': 112, 'down': 6, 'forward': 9, 'image': None, 'gif': None, 'thumbnail': 'http://wimg.spriteapp.cn/picture/2018/0512/5af6426f61cbf_wpd.jpg', 'video': 'http://dvideo.spriteapp.cn/video/2018/0512/5af6426f61cbf_wpd.mp4'}, {'type': 'gif', 'text': '实拍小伙坐爱心座位 拒给老人让座：我清华的！', 'username': '蛮夷阿涂 [蛮夷阿涂]', 'uid': '19837434', 'header': 'http://wimg.spriteapp.cn/profile/large/2017/03/10/58c2180891031_mini.jpg', 'comment': 385, 'top_commentsVoiceuri': None, 'top_commentsContent': '你们都被骗了，实际他是北大的！', 'top_commentsHeader': 'http://qzapp.qlogo.cn/qzapp/100336987/FA476074542191EE293BF1D41CCEE81A/100', 'top_commentsName': 'o2SL', 'passtime': '2017-10-27\xa009:28:01', 'soureid': 26681243, 'up': 981, 'down': 117, 'forward': 5, 'image': None, 'gif': 'http://wimg.spriteapp.cn/ugc/2017/10/26/59f12c1899f5c.gif', 'thumbnail': 'http://wimg.spriteapp.cn/ugc/2017/10/26/59f12c1899f5c_a_1.jpg', 'video': None}]}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='failClass'>
+    <td>get_kuaidi_test.Kuaiditest</td>
+    <td>4</td>
+    <td>2</td>
+    <td>2</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c4',4)">Detail</a></td>
+</tr>
+
+<tr id='ft4.1' class='none'>
+    <td class='failCase'><div class='testcase'>test_kuaidi_postid_error: 快递单号不存在</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft4.1')" >
+        fail</a>
+
+    <div id='div_ft4.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft4.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft4.1: {'message': 'ok', 'nu': '111000000000000000', 'ischeck': '0', 'condition': '00', 'com': 'yuantong', 'status': '200', 'state': '0', 'data': [{'time': '2019-06-16 18:35:04', 'ftime': '2019-06-16 18:35:04', 'context': '订单已由公司前台代收，感谢您在京东购物，欢迎您再次光临！', 'location': ''}, {'time': '2019-06-16 16:05:40', 'ftime': '2019-06-16 16:05:40', 'context': '配送员开始配送，请您准备收货，配送员，颜金旺，手机号，13537865838', 'location': ''}, {'time': '2019-06-16 15:46:24', 'ftime': '2019-06-16 15:46:24', 'context': '货物已分配，等待配送', 'location': ''}, {'time': '2019-06-16 15:46:23', 'ftime': '2019-06-16 15:46:23', 'context': '货物已到达【深圳九围营业部】', 'location': ''}, {'time': '2019-06-16 10:35:21', 'ftime': '2019-06-16 10:35:21', 'context': '货物已完成分拣，离开【佛山狮山分拣中心】', 'location': ''}, {'time': '2019-06-16 10:14:56', 'ftime': '2019-06-16 10:14:56', 'context': '货物已交付京东物流', 'location': ''}, {'time': '2019-06-16 10:14:56', 'ftime': '2019-06-16 10:14:56', 'context': '货物已到达【佛山狮山分拣中心】', 'location': ''}]}
+Traceback (most recent call last):
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\interface\get_kuaidi_test.py", line 30, in test_kuaidi_postid_error
+    self.assertEqual(self.result['data'][0]['context'],'查无结果')
+AssertionError: '订单已由公司前台代收，感谢您在京东购物，欢迎您再次光临！' != '查无结果'
+- 订单已由公司前台代收，感谢您在京东购物，欢迎您再次光临！
++ 查无结果
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt4.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_kuaidi_postid_null: 快递单号为空</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.2')" >
+        pass</a>
+
+    <div id='div_pt4.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt4.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt4.2: {'message': '参数错误', 'nu': '', 'ischeck': '0', 'condition': '', 'com': '', 'status': '400', 'state': '0', 'data': []}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft4.3' class='none'>
+    <td class='failCase'><div class='testcase'>test_kuaidi_success: 查询成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft4.3')" >
+        fail</a>
+
+    <div id='div_ft4.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft4.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft4.3: {'message': '参数错误', 'nu': '', 'ischeck': '0', 'condition': '', 'com': '', 'status': '400', 'state': '0', 'data': []}
+Traceback (most recent call last):
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\interface\get_kuaidi_test.py", line 36, in test_kuaidi_success
+    self.assertEqual(self.result['status'],'200')
+AssertionError: '400' != '200'
+- 400
+? ^
++ 200
+? ^
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt4.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_kuaidi_type_null: 快递公司为空</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.4')" >
+        pass</a>
+
+    <div id='div_pt4.4' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt4.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt4.4: {'message': '参数错误', 'nu': '', 'ischeck': '0', 'condition': '', 'com': '', 'status': '400', 'state': '0', 'data': []}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>get_place_api_test.Placeapi: 地点提示API</td>
+    <td>4</td>
+    <td>2</td>
+    <td>0</td>
+    <td>2</td>
+    <td><a href="javascript:showClassDetail('c5',4)">Detail</a></td>
+</tr>
+
+<tr id='pt5.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_place_api_ak_error: ak错误</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.1')" >
+        pass</a>
+
+    <div id='div_pt5.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt5.1: {'status': 200, 'message': 'APP不存在，AK有误请检查再重试'}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt5.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_place_api_ak_null: ak为空</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.2')" >
+        pass</a>
+
+    <div id='div_pt5.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt5.2: {'status': 101, 'message': 'AK参数不存在'}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft5.3' class='none'>
+    <td class='errorCase'><div class='testcase'>test_place_api_success: 查询成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft5.3')" >
+        error</a>
+
+    <div id='div_ft5.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft5.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft5.3: Traceback (most recent call last):
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\interface\get_place_api_test.py", line 14, in test_place_api_success
+    self.result = r.json()
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\venv\lib\site-packages\requests\models.py", line 897, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "C:\Users\JHMK-ZSS\AppData\Local\Programs\Python\Python37\lib\json\__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "C:\Users\JHMK-ZSS\AppData\Local\Programs\Python\Python37\lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "C:\Users\JHMK-ZSS\AppData\Local\Programs\Python\Python37\lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft5.4' class='none'>
+    <td class='errorCase'><div class='testcase'>test_place_api_success: 查询成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft5.4')" >
+        error</a>
+
+    <div id='div_ft5.4' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft5.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft5.4: Traceback (most recent call last):
+  File "C:\Users\JHMK-ZSS\PycharmProjects\pyrequests\interface\get_place_api_test.py", line 9, in tearDown
+    print(self.result)
+AttributeError: 'Placeapi' object has no attribute 'result'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>27</td>
+    <td>5</td>
+    <td>2</td>
+    <td>20</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>
