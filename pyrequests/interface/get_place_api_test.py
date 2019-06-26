@@ -1,10 +1,11 @@
 import unittest
 import requests
-
+from log.log import Userlog
 class Placeapi(unittest.TestCase):
     '''地点提示API'''
     def setUp(self):
         self.base_url = 'https://api.map.baidu.com/place/v2/suggestion'
+
     def tearDown(self):
         print(self.result)
 

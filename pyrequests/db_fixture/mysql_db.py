@@ -5,6 +5,7 @@ import configparser as cparser
 
 #=========读取db_config.ini文件设置
 base_dir = str(os.path.dirname(os.path.dirname(__file__)))
+print(base_dir)
 base_dir = base_dir.replace('\\','/')
 file_path = base_dir + '/db_config.ini'
 cf = cparser.ConfigParser()
@@ -54,6 +55,6 @@ if __name__ =='__main__':
     db = DB()
     table_name = 'sign_event'
     data = {'id':1,'name':'xiaomi6',"limit1":12,'status':1,'address':'2','start_time':'2018-07-09 12:12:12','create_time':'2018-07-09 12:12:12'}
-    db.clear(table_name)
+    # db.clear(table_name)
     db.insert(table_name,data)
     db.close()
